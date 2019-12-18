@@ -1,0 +1,9 @@
+<h1>Content Management System</h1>
+
+<% if (!user) { %>
+<p>Please <a href="/login">log in</a> with account.</p>
+<% } else { %>
+<p>Welcome <%= user.username %>, <a href="/edit">edit</a> the HTML or <a href="/logout">logout.</a></p>
+<% } %>
+
+<div id="html"><%- html %></div>

@@ -1,0 +1,8 @@
+<h1>Online Bank</h1>
+
+<% if (!user) { %>
+<p>Please <a href="/login">log in</a> with account.</p>
+<% } else { %>
+<p>Welcome <%= user.username %>, your current balance is <%= balance %> CHF.</p>
+<p><a href="/withdraw">Withdraw</a> money from your account or <a href="/logout">logout.</a></p>
+<% } %>
