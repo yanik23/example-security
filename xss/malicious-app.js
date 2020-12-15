@@ -18,6 +18,7 @@ app.get('/steal', function (req, res) {
             result += chunk;
         });
         response.on('end', function () {
+            console.log("Secret: " + result);
             res.send(result);
         });
     });

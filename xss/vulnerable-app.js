@@ -72,7 +72,7 @@ app.post('/edit', loggedIn, function (req, res) {
 
 app.get('/secret', function(req, res) {
   if (req.user) {
-    res.send("I can't keep secrets!");
+    res.send("J'écoute Tailor Swift en secret!");
   } else {
     res.send("Unauthorized")
   }
